@@ -31,3 +31,24 @@ variable "nat_gateway_subnet_index" {
   type        = number
   default     = 0
 }
+variable "public_sg_name" {
+  description = "Name of the public security group."
+  default     = "public-sg"
+}
+
+variable "private_sg_name" {
+  description = "Name of the private security group."
+  default     = "private-sg"
+}
+
+variable "public_sg_ingress_ports" {
+  description = "List of ingress ports for the public security group."
+  type        = list(number)
+  default     = [22, 80, 443]
+}
+
+variable "private_sg_ingress_ports" {
+  description = "List of ingress ports for the private security group."
+  type        = list(number)
+  default     = [22,80,443]
+}
